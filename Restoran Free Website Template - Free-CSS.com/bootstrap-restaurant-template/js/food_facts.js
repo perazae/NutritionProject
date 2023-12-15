@@ -23,38 +23,36 @@ async function fetchFoodFacts() {
 
 function displayFoodData(data) {
   const displayProduct = document.getElementById("displayProduct");
-  
+  const productInfo = document.getElementById("productInfo");
+  productInfo.classList.remove("d-none");
   displayProduct.innerHTML = "";
 
   const containerElement = document.createElement("div");
   containerElement.id = "imageContainer";
-  const productImage = document.createElement("productImage");
-  productImage.src = `product.`
+  const productImage = document.createElement("img");
+  productImage.src = `${data.product.image_front_small_url}`
   containerElement.appendChild(productImage);
-  document.body.appendChild(containerElement);
+  displayProduct.appendChild(containerElement);
 
 
 
 
-  const nameParagraph = document.createElement("p");
-  nameParagraph.textContent = `Product Name: ${data.product.product_name_en}`;
-  displayProduct.appendChild(nameParagraph);
-  
   const carbsParagraph = document.createElement("p");
-  carbsParagraph.textContent = `Carbs: ${data.product.nutriments["carbohydrates"]}`
-  displayProduct.append(carbsParagraph);
-
+  carbsParagraph.innerHTML = `<strong>Carbs:</strong> ${data.product.nutriments["carbohydrates"]}`;
+  displayProduct.appendChild(carbsParagraph);
+  
   const fatParagraph = document.createElement("p");
-  fatParagraph.textContent = `Fat: ${data.product.nutriments["fat"]}`;
-  displayProduct.append(fatParagraph);
-
+  fatParagraph.innerHTML = `<strong>Fat:</strong> ${data.product.nutriments["fat"]}`;
+  displayProduct.appendChild(fatParagraph);
+  
   const proteinParagraph = document.createElement("p");
-  proteinParagraph.textContent = `Protein: ${data.product.nutriments["proteins"]}`;
-  displayProduct.append(proteinParagraph);
-
+  proteinParagraph.innerHTML = `<strong>Protein:</strong> ${data.product.nutriments["proteins"]}`;
+  displayProduct.appendChild(proteinParagraph);
+  
   const ingredientsParagraph = document.createElement("p");
-  ingredientsParagraph.textContent = `Ingredients: ${data.product.ingredients_text}`;
+  ingredientsParagraph.innerHTML = `<strong>Ingredients:</strong> ${data.product.ingredients_text}`;
   displayProduct.appendChild(ingredientsParagraph);
+  
  
 
 }
