@@ -1,7 +1,7 @@
 window.onload = init;
 
 function init() {
-  // exampleBarcodes.forEach(barcode => fetchFoodFacts(barcode))
+  exampleBarcodes.forEach(barcode => fetchFoodFacts(barcode))
 }
 
 // Nutella - Ferrero - 400 g: 3017620422003
