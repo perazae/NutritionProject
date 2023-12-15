@@ -25,18 +25,36 @@ function displayFoodData(data) {
   const displayProduct = document.getElementById("displayProduct");
   
   displayProduct.innerHTML = "";
-  
+
+  const containerElement = document.createElement("div");
+  containerElement.id = "imageContainer";
+  const productImage = document.createElement("productImage");
+  productImage.src = `product.`
+  containerElement.appendChild(productImage);
+  document.body.appendChild(containerElement);
+
+
+
+
   const nameParagraph = document.createElement("p");
   nameParagraph.textContent = `Product Name: ${data.product.product_name_en}`;
   displayProduct.appendChild(nameParagraph);
+  
+  const carbsParagraph = document.createElement("p");
+  carbsParagraph.textContent = `Carbs: ${data.product.nutriments["carbohydrates"]}`
+  displayProduct.append(carbsParagraph);
 
   const fatParagraph = document.createElement("p");
-  nameParagraph.textContent = `Fat: ${data.product.nutriments["fat"]}`;
+  fatParagraph.textContent = `Fat: ${data.product.nutriments["fat"]}`;
   displayProduct.append(fatParagraph);
+
+  const proteinParagraph = document.createElement("p");
+  proteinParagraph.textContent = `Protein: ${data.product.nutriments["proteins"]}`;
+  displayProduct.append(proteinParagraph);
 
   const ingredientsParagraph = document.createElement("p");
   ingredientsParagraph.textContent = `Ingredients: ${data.product.ingredients_text}`;
   displayProduct.appendChild(ingredientsParagraph);
-
+ 
 
 }
