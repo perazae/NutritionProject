@@ -44,6 +44,10 @@ function displayFoodData(data) {
   containerElement.appendChild(productImage);
   displayProduct.appendChild(containerElement);
 
+  const productName = document.createElement("h5");
+  productName.textContent = `${data.product.product_name}`;
+  displayProduct.appendChild(productName);
+
   const carbsParagraph = document.createElement("p");
   carbsParagraph.innerHTML = `<strong>Carbs:</strong> ${data.product.nutriments["carbohydrates"]}`;
   displayProduct.appendChild(carbsParagraph);
