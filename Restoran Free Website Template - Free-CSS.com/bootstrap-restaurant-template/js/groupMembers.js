@@ -5,7 +5,7 @@ var requestOptions = {
     redirect: 'follow'
   };
   
-  fetch("https://raw.githubusercontent.com/RemseyMailjard/YearUpAPI/main/data.json", requestOptions)
+  fetch("https://yearupdemo.azurewebsites.net/api/users/group/CTRL%20Freaks", requestOptions)
     .then(response => response.json())
     .then(result => {
 
