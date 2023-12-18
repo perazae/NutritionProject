@@ -1,5 +1,5 @@
 "use strict";
-const baseURL = "https://world.openfoodfacts.org/api/v2/product/";
+const baseURL = "https://world.openfoodfacts.net/api/v3/product/";
 
 async function fetchFoodFacts() {
   const endpointURL = document.getElementById("barcode").value;
@@ -15,6 +15,7 @@ async function fetchFoodFacts() {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
+    console.log(data)
     displayFoodData(data);
   } catch (error) {
     console.error("There was a problem with the fetch operation:", error);
