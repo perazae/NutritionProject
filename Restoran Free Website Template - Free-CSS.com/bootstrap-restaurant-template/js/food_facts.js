@@ -49,15 +49,15 @@ function displayFoodData(data) {
   displayProduct.appendChild(productName);
 
   const carbsParagraph = document.createElement("p");
-  carbsParagraph.innerHTML = `<strong>Carbs:</strong> ${data.product.nutriments["carbohydrates"]}`;
+  carbsParagraph.innerHTML = `<strong>Carbs:</strong> ${data.product.nutriments["carbohydrates"]}g`;
   displayProduct.appendChild(carbsParagraph);
 
   const fatParagraph = document.createElement("p");
-  fatParagraph.innerHTML = `<strong>Fat:</strong> ${data.product.nutriments["fat"]}`;
+  fatParagraph.innerHTML = `<strong>Fat:</strong> ${data.product.nutriments["fat"]}g`;
   displayProduct.appendChild(fatParagraph);
 
   const proteinParagraph = document.createElement("p");
-  proteinParagraph.innerHTML = `<strong>Protein:</strong> ${data.product.nutriments["proteins"]}`;
+  proteinParagraph.innerHTML = `<strong>Protein:</strong> ${data.product.nutriments["proteins"]}g`;
   displayProduct.appendChild(proteinParagraph);
 
   const ingredientsParagraph = document.createElement("p");
